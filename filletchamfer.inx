@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <_name>Fillet and Chamfer</_name>
+    <id>org.ekips.filter.filletchamfer</id>
+	<dependency type="executable" location="extensions">filletchamfer.py</dependency>
+	<dependency type="executable" location="extensions">inkex.py</dependency>
+    <param name="type" type="enum" _gui-text="Fillet or Chamfer:">
+        <_item value="fillet">Fillet</_item>
+        <_item value="chamfer">Chamfer</_item>
+    </param>
+	<param name="radius" type="float" min="0.0" max="1000.0" _gui-text="Radius (px):">20.0</param>
+	<effect>
+		<object-type>all</object-type>
+		<effects-menu>
+			<submenu _name="Generate from Path"/>
+		</effects-menu>						    		
+    </effect>
+    <script>
+        <command reldir="extensions" interpreter="python">filletchamfer.py</command>
+    </script>
+</inkscape-extension>
